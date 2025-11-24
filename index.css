@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050505;
+  background-image: radial-gradient(circle at 50% 0%, #0f1115 0%, #050505 75%);
+  background-attachment: fixed;
+  color: #e1e7ef;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Grid Pattern - Refined */
+.bg-grid-subtle {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 0%, black 50%, transparent 100%);
+}
+
+/* Noise Texture - Optimized opacity */
+.bg-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03; /* Reduced for better text readability */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* The "Beam" Effect - Replicated from reference */
+.beam-glow {
+  position: absolute;
+  top: -30%; /* Positioned high up */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  height: 1200px; /* Long throw */
+  background: conic-gradient(
+    from 200deg at 50% 0%, 
+    transparent 140deg, 
+    rgba(0, 96, 255, 0.1) 150deg, 
+    rgba(91, 91, 214, 0.6) 165deg, 
+    rgba(200, 220, 255, 0.9) 180deg, 
+    rgba(91, 91, 214, 0.6) 195deg, 
+    rgba(0, 96, 255, 0.1) 210deg, 
+    transparent 220deg
+  );
+  filter: blur(70px);
+  opacity: 0.8;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: beam-pulse 10s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Glass Utilities - Enhanced */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(91, 91, 214, 0.5);
+  box-shadow: 0 0 0 1px rgba(91, 91, 214, 0.2);
+}
+
+/* Beta Pill Glow */
+.beta-pill {
+  background: linear-gradient(90deg, rgba(40,40,50,0.8) 0%, rgba(60,60,70,0.8) 50%, rgba(40,40,50,0.8) 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 20px rgba(91, 91, 214, 0.15) inset;
+  will-change: transform;
+}
+
+/* Animation Utilities */
+.will-change-transform {
+  will-change: transform;
+}
+
+
